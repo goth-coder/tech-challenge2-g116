@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 2. **Configure environment variables:**
 
-Create a `.env` file at the project root:
+Rename the `.env.example` file to `.env` at the project root and fill in your Supabase database connection details and JWT secret:
 
 ```
 SUPABASE_HOST=your_host
