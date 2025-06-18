@@ -1,0 +1,21 @@
+[project]
+name = "tech-challenge2-g116"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bcrypt>=4.3.0",
+    "dotenv>=0.9.9",
+    "flasgger>=0.9.7.1",
+    "flask-jwt-extended>=4.7.1",
+    "psycopg2>=2.9.10",
+    "pydantic[email]>=2.11.7",
+    "pyjwt>=2.10.1",
+    "supabase>=2.15.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.0",
+]
