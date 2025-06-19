@@ -1,5 +1,8 @@
 from typing import Annotated
-from pydantic import BaseModel, Field, EmailStr, constr, ValidationError, StringConstraints
+
+from pydantic import BaseModel, EmailStr, Field, StringConstraints
+
+
 class LoginSchema(BaseModel):
     """
     Schema for user login credentials.
@@ -9,10 +12,7 @@ class LoginSchema(BaseModel):
     """
 
     email: EmailStr
-    password: Annotated[str, StringConstraints(min_length=6, 
-                                               max_length=50,
-                                               error_message="Password must be between 6 and 50 characters.")]
-
+    password: Annotated[str, StringConstraints(min_length=6, max_length=50)]
 
 
 class SignupSchema(BaseModel):
@@ -25,8 +25,8 @@ class SignupSchema(BaseModel):
         password (str): User's password. Must be between 6 and 50 characters.
     """
 
-    name: Annotated[str, StringConstraints(min_length=3, max_length=100,error_message="Name must be between 3 and 100 characters.")]
-    username: Annotated[str, StringConstraints(min_length=6, max_length=100,error_message="Username must be between 6 and 100 characters.")]
+    name: Annotated[str, StringConstraints(min_length=3, max_length=100)]
+    username: Annotated[str, StringConstraints(min_length=6, max_length=100)]
     email: EmailStr
     age: Annotated[int | None, Field(gt=0)] | None = None
-    password: Annotated[str, StringConstraints(min_length=6, max_length=50,error_message="Password must be between 6 and 50 characters.")]
+    password: Annotated[str, StringConstraints(min_length=6, max_length=50)]
